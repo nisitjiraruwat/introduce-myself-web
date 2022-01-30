@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: async (config, { dev }) => {
+  webpack: (config, { dev }) => {
     if (dev) {
-      const ESLintPlugin = (await import('eslint-webpack-plugin')).default
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const ESLintPlugin = require('eslint-webpack-plugin')
 
       config.plugins.push(new ESLintPlugin({
         extensions: ['js', 'ts', 'tsx'],
@@ -14,4 +15,4 @@ const nextConfig = {
   reactStrictMode: true
 }
 
-export default nextConfig
+module.exports = nextConfig
