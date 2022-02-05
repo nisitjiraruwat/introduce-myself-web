@@ -8,7 +8,7 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, className = '', title = 'My Resume' }: Props): JSX.Element => (
+const Layout = ({ children, className = '', title = 'Resume Chan' }: Props): JSX.Element => (
   <>
     <Head>
       <title>{title}</title>
@@ -22,7 +22,7 @@ const Layout = ({ children, className = '', title = 'My Resume' }: Props): JSX.E
         href='/favicon.ico'
       />
     </Head>
-    <main className={cn('relative w-full', className)}>
+    <main className={cn('w-full', className)}>
       {children}
     </main>
   </>

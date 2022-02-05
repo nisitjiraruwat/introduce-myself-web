@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+html, body, #__next {
+  @apply h-screen;
+}
+
+body {
   font-family: 'Sarabun', sans-serif;
 }
