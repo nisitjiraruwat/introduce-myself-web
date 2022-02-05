@@ -1,12 +1,14 @@
+import cn from 'classnames'
 import { ReactNode } from 'react'
 import Head from 'next/head'
 
 type Props = {
   children?: ReactNode
+  className?: string
   title?: string
 }
 
-const Layout = ({ children, title = 'My Resume' }: Props): JSX.Element => (
+const Layout = ({ children, className = '', title = 'My Resume' }: Props): JSX.Element => (
   <>
     <Head>
       <title>{title}</title>
@@ -20,7 +22,7 @@ const Layout = ({ children, title = 'My Resume' }: Props): JSX.Element => (
         href='/favicon.ico'
       />
     </Head>
-    <main className='relative w-full'>
+    <main className={cn('relative w-full', className)}>
       {children}
     </main>
   </>

@@ -1,17 +1,19 @@
 import { gql } from '@apollo/client'
-import { InferGetServerSidePropsType } from 'next'
+import { GetServerSidePropsContext, InferGetServerSidePropsType, GetServerSidePropsResult } from 'next'
 
 import Layout from '@/components/common/Layout'
 import SoftwareDeveloper from '@/components/resume/SoftwareDeveloper'
 import apolloClient from '@/lib/apollo-client'
 import { ResumeType } from '@/types/Resume'
 
-export async function getServerSideProps (): Promise<{ props: { resume: ResumeType } }> {
-  const { data } = await apolloClient.query({
+export async function getServerSideProps ({ params }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<{ resume: ResumeType }>> {
+  const id = params!.id as string
+  const { data } = await apolloClient.query<{resumes: ResumeType[]}>({
     query: gql`
       query {
-        resume(where: {email: "nisit.jiraruwat@gmail.com"}) {
+        resumes(where: {user: { username: {equals: "${id}"}}}, take: 1) {
             id
+            fullname
             email
             phone
             address
@@ -35,14 +37,21 @@ export async function getServerSideProps (): Promise<{ props: { resume: ResumeTy
       }
     `
   })
-  return { props: { resume: data.resume } }
+
+  if (data.resumes.length === 0) {
+    return {
+      notFound: true
+    }
+  }
+
+  return { props: { resume: data.resumes[0] } }
 }
 
 export default function Profile ({ resume }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
   return (
     <Layout
       className='bg-gray-100'
-      title='Resume - Nisit Jiraruwat'
+      title={`Resume - ${resume.fullname}`}
     >
       <div className='mx-auto w-print bg-white'>
         <div className='relative w-full'>
@@ -50,7 +59,7 @@ export default function Profile ({ resume }: InferGetServerSidePropsType<typeof 
           <div className='w-full h-32 bg-gray-300' />
           <div className='absolute inset-0 py-8 px-16 w-full h-full bg-transparent'>
             <div className='flex justify-center items-center w-full h-full bg-white border-4 border-orange-300'>
-              <span className='text-7xl font-semibold'>NISIT JIRARUWAT</span>
+              <span className='text-7xl font-semibold uppercase'>{resume.fullname}</span>
             </div>
           </div>
         </div>

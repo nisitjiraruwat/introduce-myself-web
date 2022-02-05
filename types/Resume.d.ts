@@ -17,6 +17,7 @@ export type ExperienceType = {
 
 export type ResumeType = {
   id: string
+  fullname: string
   email: string
   phone: string
   address: string
