@@ -17,9 +17,11 @@ export type ExperienceType = {
 
 export type ResumeType = {
   id: string
+  fullname: string
   email: string
-  phone: string
-  address: string
+  phone: string | null
+  address: string | null
+  website: string | null
   additionalSkills: string[]
   educations: EducationType[]
   experiences: ExperienceType[]
