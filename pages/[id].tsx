@@ -206,6 +206,12 @@ export default function Profile ({ resume }: InferGetServerSidePropsType<typeof 
           </div>
         </div>
       </div>
+      <button
+        className='print-btn'
+        onClick={() => print()}
+      >
+        <i className='text-white fas fa-print fa-lg' />
+      </button>
     </Layout>
   )
 }
