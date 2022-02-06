@@ -5,6 +5,7 @@ import Layout from '@/components/common/Layout'
 import SoftwareDeveloper from '@/components/resume/SoftwareDeveloper'
 import apolloClient from '@/lib/apollo-client'
 import { ResumeType } from '@/types/Resume'
+import { isTextNotEmpty } from '@/utils/text'
 
 export async function getServerSideProps ({ params }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<{ resume: ResumeType }>> {
   const id = params!.id as string
@@ -87,14 +88,18 @@ export default function Profile ({ resume }: InferGetServerSidePropsType<typeof 
                   <span className='text-lg'>{resume.email}</span>
                   <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-envelope' /></div>
                 </div>
-                <div className='flex justify-end items-center space-x-4'>
+                {isTextNotEmpty(resume.phone) && <div className='flex justify-end items-center space-x-4'>
                   <span className='text-lg'>{resume.phone}</span>
                   <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-phone' /></div>
-                </div>
-                <div className='flex justify-end items-center space-x-4'>
+                </div>}
+                {isTextNotEmpty(resume.address) && <div className='flex justify-end items-center space-x-4'>
                   <span className='text-lg'>{resume.address}</span>
                   <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-map-marker-alt' /></div>
-                </div>
+                </div>}
+                {isTextNotEmpty(resume.website) && <div className='flex justify-end items-center space-x-4'>
+                  <span className='text-lg'>{resume.website}</span>
+                  <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-globe' /></div>
+                </div>}
               </div>
             </div>
             <div className='space-y-2'>
