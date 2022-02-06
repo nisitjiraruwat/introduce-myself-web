@@ -50,7 +50,7 @@ export async function getServerSideProps ({ params }: GetServerSidePropsContext)
 export default function Profile ({ resume }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
   return (
     <Layout
-      className='bg-gray-100'
+      className='overflow-y-scroll bg-gray-100'
       title={`Resume - ${resume.fullname}`}
     >
       <div className='mx-auto w-print bg-white'>
@@ -85,15 +85,15 @@ export default function Profile ({ resume }: InferGetServerSidePropsType<typeof 
               <div>
                 <div className='flex justify-end items-center space-x-4'>
                   <span className='text-lg'>{resume.email}</span>
-                  <div className='flex justify-center w-8'><i className='text-2xl fas fa-envelope' /></div>
+                  <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-envelope' /></div>
                 </div>
                 <div className='flex justify-end items-center space-x-4'>
                   <span className='text-lg'>{resume.phone}</span>
-                  <div className='flex justify-center w-8'><i className='text-2xl fas fa-phone' /></div>
+                  <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-phone' /></div>
                 </div>
                 <div className='flex justify-end items-center space-x-4'>
                   <span className='text-lg'>{resume.address}</span>
-                  <div className='flex justify-center w-8'><i className='text-2xl fas fa-map-marker-alt' /></div>
+                  <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-map-marker-alt' /></div>
                 </div>
               </div>
             </div>
