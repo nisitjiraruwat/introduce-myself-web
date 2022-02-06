@@ -14,7 +14,7 @@ export default function Home (): JSX.Element {
           <div className='flex items-center ml-auto'>
             <a
               className='text-white hover:text-secondary-900'
-              href='https://github.com/nisitjiraruwat/introduce-myself-web'
+              href='https://github.com/nisitjiraruwat/resume-chan-web'
               target='_blank'
               rel='noreferrer'
             >

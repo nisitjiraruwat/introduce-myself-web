@@ -38,7 +38,7 @@ const Layout = ({ children, className = '', title = 'Resume Chan', isShowNavber 
           <div className='flex items-center ml-auto'>
             <a
               className='text-slate-400 hover:text-slate-500'
-              href='https://github.com/nisitjiraruwat/introduce-myself-web'
+              href='https://github.com/nisitjiraruwat/resume-chan-web'
               target='_blank'
               rel='noreferrer'
             >
