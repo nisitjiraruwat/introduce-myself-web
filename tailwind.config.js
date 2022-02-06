@@ -35,6 +35,10 @@ module.exports = {
           800: '#075272',
           900: '#043c5e'
         }
+      },
+      fontFamily: {
+        mitr: ['Mitr', 'sans-serif'],
+        sarabun: ['Sarabun', 'sans-serif']
       }
     }
   },

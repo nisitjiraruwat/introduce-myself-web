@@ -5,7 +5,24 @@ import Layout from '@/components/common/Layout'
 
 export default function Home (): JSX.Element {
   return (
-    <Layout className='h-full bg-primary-500'>
+    <Layout
+      className='h-full bg-primary-500'
+      isShowNavber={false}
+    >
+      <div className='w-full'>
+        <div className='flex py-[15px] px-8'>
+          <div className='flex items-center ml-auto'>
+            <a
+              className='text-white hover:text-secondary-900'
+              href='https://github.com/nisitjiraruwat/introduce-myself-web'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <i className='text-current fab fa-github fa-lg'></i>
+            </a>
+          </div>
+        </div>
+      </div>
       <div className='absolute top-24 left-24'>
         <Link href='/nisit.jiraruwat'>
           <a className='group block relative w-14 h-14 bg-white rounded-full hover:drop-shadow-xl'>
@@ -16,7 +33,7 @@ export default function Home (): JSX.Element {
               <i className='text-secondary-500 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-8 group-hover:translate-y-0 fas fa-user-astronaut fa-2x' />
             </div>
             <div className='hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2'>
-              <h3 className='flex px-2 pb-1 text-sm text-white bg-zinc-900 rounded'>Creator</h3>
+              <h3 className='flex px-2 pb-0.5 text-sm text-white bg-zinc-900 rounded'>Creator</h3>
             </div>
           </a>
         </Link>

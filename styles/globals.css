@@ -14,5 +14,5 @@ html, body, #__next {
 }
 
 body {
-  font-family: 'Sarabun', sans-serif;
+  @apply font-mitr;
 }
