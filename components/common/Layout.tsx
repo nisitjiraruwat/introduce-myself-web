@@ -25,7 +25,7 @@ const Layout = ({ children, className = '', title = 'Resume Chan', isShowNavber 
       />
     </Head>
     {isShowNavber &&
-      <div className='sticky top-0 z-40 w-full bg-white/95 border-b border-slate-900/10 backdrop-blur'>
+      <div className='print:hidden sticky top-0 z-40 w-full bg-white/95 border-b border-slate-900/10 backdrop-blur'>
         <div className='flex py-4 px-8'>
           <div>
             <Link href='/'>
