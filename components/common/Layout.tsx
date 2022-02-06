@@ -22,7 +22,7 @@ const Layout = ({ children, className = '', title = 'Resume Chan' }: Props): JSX
         href='/favicon.ico'
       />
     </Head>
-    <main className={cn('w-full', className)}>
+    <main className={cn('w-full h-screen', className)}>
       {children}
     </main>
   </>
