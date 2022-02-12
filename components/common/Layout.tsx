@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import Head from 'next/head'
 import Link from 'next/link'
 import { ReactNode } from 'react'
@@ -47,7 +46,7 @@ const Layout = ({ children, className = '', title = 'Resume Chan', isShowNavber 
           </div>
         </div>
       </div>}
-    <main className={cn('w-full', className)}>
+    <main className={className}>
       {children}
     </main>
   </>

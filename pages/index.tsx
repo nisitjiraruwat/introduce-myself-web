@@ -9,7 +9,7 @@ export default function Home (): JSX.Element {
 
   return (
     <Layout
-      className='h-full bg-primary-500'
+      className='h-screen bg-primary-500'
       isShowNavber={false}
     >
       <div className='w-full'>

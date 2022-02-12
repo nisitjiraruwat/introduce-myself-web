@@ -52,10 +52,10 @@ export async function getServerSideProps ({ params }: GetServerSidePropsContext)
 export default function Profile ({ resume }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
   return (
     <Layout
-      className='bg-gray-100'
+      className='print:overflow-hidden overflow-x-auto bg-gray-100'
       title={`Resume - ${resume.fullname}`}
     >
-      <div className='mx-auto w-print font-sarabun bg-white'>
+      <div className='mx-auto w-print min-h-print font-sarabun bg-white'>
         <div className='relative w-full'>
           <div className='w-full h-16 bg-white' />
           <div className='w-full h-32 bg-gray-300' />

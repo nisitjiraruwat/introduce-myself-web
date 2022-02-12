@@ -14,6 +14,9 @@ module.exports = withAnimations({
       height: {
         print: '29.7cm'
       },
+      minHeight: {
+        print: '29.7cm'
+      },
       colors: {
         'black-gray': '#434343',
         primary: {
