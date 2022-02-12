@@ -18,6 +18,7 @@ export async function getServerSideProps ({ params }: GetServerSidePropsContext)
             email
             phone
             address
+            website
             educations {
                 id
                 name
@@ -97,7 +98,14 @@ export default function Profile ({ resume }: InferGetServerSidePropsType<typeof 
                   <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-map-marker-alt' /></div>
                 </div>}
                 {isTextNotEmpty(resume.website) && <div className='flex justify-end items-center space-x-4'>
-                  <span className='text-lg'>{resume.website}</span>
+                  <a
+                    className='text-lg text-blue-600 print:text-current underline print:no-underline break-all'
+                    href={resume.website!}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    {resume.website}
+                  </a>
                   <div className='flex flex-none justify-center w-8'><i className='text-2xl fas fa-globe' /></div>
                 </div>}
               </div>
@@ -185,29 +193,6 @@ export default function Profile ({ resume }: InferGetServerSidePropsType<typeof 
                 })}
               </div>
             </div>
-            {/* <div className='space-y-2'>
-              <div className='flex items-center space-x-3'>
-                <svg
-                  height='28'
-                  width='96'
-                >
-                  <line
-                    className='stroke-current text-orange-300 stroke-[4px]'
-                    x1='0'
-                    y1='14'
-                    x2='96'
-                    y2='14'
-                  />
-                  Sorry, your browser does not support inline SVG.
-                </svg>
-                <span className='text-xl font-semibold tracking-widest'>MY PORTFOLIO</span>
-              </div>
-              <ul className='list-disc pl-8 mt-2'>
-                <li><span className='font-semibold'>Web Youtube queue playlist:</span> https://www.iqueuez.com</li>
-                <li><span className='font-semibold'>Unity Game:</span> https://play.google.com/store/apps/details?id=com.iqueuez.game.crystaladventure</li>
-                <li><span className='font-semibold'>Unity Game:</span> https://play.google.com/store/apps/details?id=com.iqueuez.blockpuzzle</li>
-              </ul>
-            </div> */}
           </div>
         </div>
       </div>
