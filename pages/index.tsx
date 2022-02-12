@@ -16,7 +16,7 @@ export default function Home (): JSX.Element {
         <div className='flex py-[15px] px-8'>
           <div className='flex items-center ml-auto'>
             <a
-              className='text-white hover:text-secondary-900'
+              className='text-white hover:text-secondary-900 hover:animate-wobble animate-none hover:animate-infinite hover:animate-fast'
               href='https://github.com/nisitjiraruwat/resume-chan-web'
               target='_blank'
               rel='noreferrer'
