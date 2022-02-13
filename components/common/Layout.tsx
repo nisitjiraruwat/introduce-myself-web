@@ -27,9 +27,9 @@ const Layout: FC<Props> = ({ children, className = '', title = 'Resume Chan', is
         <div className='flex py-4 px-8'>
           <div>
             <Link href='/'>
-              <a className='flex items-center space-x-3'>
+              <a className='group flex items-center space-x-3'>
                 <i className='text-secondary-500 fas fa-file fa-lg' />
-                <span className='text-xl font-medium text-black-gray'>Resume Chan</span>
+                <span className='text-xl font-medium text-black-gray group-hover:animate-flipInX group-hover:animate-fast'>Resume Chan</span>
               </a>
             </Link>
           </div>
