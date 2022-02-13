@@ -9,13 +9,13 @@ module.exports = withAnimations({
   theme: {
     extend: {
       width: {
-        print: '21.0cm'
+        print: 'var(--print-width)'
       },
       height: {
-        print: '29.7cm'
+        print: 'var(--print-height)'
       },
       minHeight: {
-        print: '29.7cm'
+        print: 'var(--print-height)'
       },
       colors: {
         'black-gray': '#434343',
