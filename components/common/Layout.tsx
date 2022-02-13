@@ -1,15 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { ReactNode } from 'react'
+import { FC } from 'react'
 
 type Props = {
-  children?: ReactNode
   className?: string
   title?: string
   isShowNavber?: boolean
 }
 
-const Layout = ({ children, className = '', title = 'Resume Chan', isShowNavber = true }: Props): JSX.Element => (
+const Layout: FC<Props> = ({ children, className = '', title = 'Resume Chan', isShowNavber = true }): JSX.Element => (
   <>
     <Head>
       <title>{title}</title>

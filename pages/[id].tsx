@@ -2,6 +2,7 @@ import { gql } from '@apollo/client'
 import { GetServerSidePropsContext, InferGetServerSidePropsType, GetServerSidePropsResult } from 'next'
 
 import Layout from '@/components/common/Layout'
+import Tooltip from '@/components/common/Tooltip'
 import SoftwareDeveloper from '@/components/resume/SoftwareDeveloper'
 import apolloClient from '@/lib/apollo-client'
 import { ResumeType } from '@/types/Resume'
@@ -196,12 +197,14 @@ export default function Profile ({ resume }: InferGetServerSidePropsType<typeof 
           </div>
         </div>
       </div>
-      <button
-        className='print-btn'
-        onClick={() => print()}
-      >
-        <i className='text-white fas fa-print fa-lg' />
-      </button>
+      <Tooltip title='Print'>
+        <button
+          className='print-btn'
+          onClick={() => print()}
+        >
+          <i className='text-white fas fa-print fa-lg' />
+        </button>
+      </Tooltip>
     </Layout>
   )
 }
