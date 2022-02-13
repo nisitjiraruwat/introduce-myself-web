@@ -25,7 +25,6 @@ module.exports = {
       }
     ],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true, argsIgnorePattern: '^_' }],
     'tailwindcss/no-custom-classname': 'off'

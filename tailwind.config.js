@@ -1,4 +1,7 @@
-module.exports = {
+/* eslint-disable @typescript-eslint/no-var-requires */
+const withAnimations = require('animated-tailwindcss')
+
+module.exports = withAnimations({
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
@@ -6,10 +9,13 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        print: '21.0cm'
+        print: 'var(--print-width)'
       },
       height: {
-        print: '29.7cm'
+        print: 'var(--print-height)'
+      },
+      minHeight: {
+        print: 'var(--print-height)'
       },
       colors: {
         'black-gray': '#434343',
@@ -43,4 +49,4 @@ module.exports = {
     }
   },
   plugins: []
-}
+})

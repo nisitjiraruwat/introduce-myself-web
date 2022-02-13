@@ -1,16 +1,14 @@
-import cn from 'classnames'
 import Head from 'next/head'
 import Link from 'next/link'
-import { ReactNode } from 'react'
+import { FC } from 'react'
 
 type Props = {
-  children?: ReactNode
   className?: string
   title?: string
   isShowNavber?: boolean
 }
 
-const Layout = ({ children, className = '', title = 'Resume Chan', isShowNavber = true }: Props): JSX.Element => (
+const Layout: FC<Props> = ({ children, className = '', title = 'Resume Chan', isShowNavber = true }): JSX.Element => (
   <>
     <Head>
       <title>{title}</title>
@@ -29,15 +27,15 @@ const Layout = ({ children, className = '', title = 'Resume Chan', isShowNavber 
         <div className='flex py-4 px-8'>
           <div>
             <Link href='/'>
-              <a className='flex items-center space-x-3'>
+              <a className='group flex items-center space-x-3'>
                 <i className='text-secondary-500 fas fa-file fa-lg' />
-                <span className='text-xl font-medium text-black-gray'>Resume Chan</span>
+                <span className='text-xl font-medium text-black-gray group-hover:animate-flipInX group-hover:animate-fast'>Resume Chan</span>
               </a>
             </Link>
           </div>
           <div className='flex items-center ml-auto'>
             <a
-              className='text-slate-400 hover:text-slate-500'
+              className='text-slate-400 hover:text-slate-500 hover:animate-wobble animate-none hover:animate-infinite hover:animate-fast'
               href='https://github.com/nisitjiraruwat/resume-chan-web'
               target='_blank'
               rel='noreferrer'
@@ -47,7 +45,7 @@ const Layout = ({ children, className = '', title = 'Resume Chan', isShowNavber 
           </div>
         </div>
       </div>}
-    <main className={cn('w-full', className)}>
+    <main className={className}>
       {children}
     </main>
   </>

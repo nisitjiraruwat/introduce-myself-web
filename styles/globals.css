@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --print-width: 21.0cm;
+  --print-height: 29.7cm;
+}
+
 @layer components {
   .print-btn {
-    @apply fixed bottom-4 w-14 h-14 bg-primary-500 rounded-full ring-1 ring-black-gray/10 hover:bg-primary-600 drop-shadow;
-    left: calc(50% + 21.0cm / 2 + 16px);
+    @apply fixed bottom-8 w-14 h-14 bg-primary-500 rounded-full ring-1 ring-black-gray/10 hover:bg-primary-600 drop-shadow right-8 lg:right-auto lg:print-left print:hidden;
   }
 }
 
-html, body, #__next {
-  @apply h-screen;
+@layer utilities {
+  .print-left {
+    left: calc(50% + var(--print-width) / 2 + 16px);
+  }
 }
 
 body {
