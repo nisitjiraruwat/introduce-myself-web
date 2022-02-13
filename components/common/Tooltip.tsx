@@ -17,8 +17,7 @@ const composeEventHandler = (handler: MouseEventHandler, eventHandler: MouseEven
 
 const Tooltip: FC<Props> = ({ children, title }) => {
   const [isMouseHover, setIsMouseHover] = useState(false)
-  const [top, setTop] = useState(0)
-  const [left, setLeft] = useState(0)
+  const [position, setPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 })
 
   if (children === undefined) {
     return <></>
@@ -28,8 +27,10 @@ const Tooltip: FC<Props> = ({ children, title }) => {
 
   const handleMouseOver = (event: MouseEvent<HTMLElement>) => {
     const rect = event.currentTarget.getBoundingClientRect()
-    setLeft(rect.left + rect.width / 2)
-    setTop(rect.top + rect.height)
+    setPosition({
+      top: rect.top + rect.height,
+      left: rect.left + rect.width / 2
+    })
     setIsMouseHover(true)
   }
 
@@ -47,8 +48,8 @@ const Tooltip: FC<Props> = ({ children, title }) => {
         <div
           className='fixed z-50 -translate-x-1/2 translate-y-0.5'
           style={{
-            top: `${top}px`,
-            left: `${left}px`
+            top: `${position.top}px`,
+            left: `${position.left}px`
           }}
         >
           <h3 className='flex px-2 pb-0.5 text-sm text-white bg-zinc-900 rounded'>{ title }</h3>
