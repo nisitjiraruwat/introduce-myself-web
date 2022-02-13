@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --print-width: 21.0cm;
-  --print-height: 29.7cm;
+  --print-width: 793.69px;
+  --print-height: 1122px;
 }
 
 @layer components {
